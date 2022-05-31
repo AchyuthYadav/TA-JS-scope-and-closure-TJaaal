@@ -7,9 +7,21 @@ function percentage(marks, total) {
 
 // Your code goes here
 ```
+let percentage = function percentage (marks, total) {
+  return (marks * 100) / total;
+}
+
 let percentage = function (marks, total) {
   return (marks * 100) / total;
 }
+
+let percentage = (marks, total) => {
+  return (marks * 100) / total;
+}
+
+let percentage = (marks, total) => (marks * 100) / total;
+
+
 
 2. Write Function Declaration or Function Expression next to the function.
 
@@ -19,30 +31,36 @@ function percentage(marks, total) {
 }
 // Your answer
 ```
-let percentage = (marks, total) => {
-  return (marks * 100) / total;
-}
+function decleration
 
 ```js
 let percentage = function percentage(marks, total) {
   return (marks * 100) / total;
 };
+
+function expression
 ```
 
 ```js
 let percentage = function (marks, total) {
   return (marks * 100) / total;
 };
+function expression
 ```
+
 
 ```js
 let percentage = (marks, total) => {
   return (marks * 100) / total;
 };
+
+function expression
 ```
 
 ```js
 let percentage = (marks, total) => (marks * 100) / total;
+
+function expression
 ```
 
 3. Why is a function definition an expression in JavaScript? Give one example of function expression.
@@ -62,9 +80,9 @@ function add(a, b) {
   return a + b;
 }
 
-let five = add(2, 3); // valid
-five = add; // invalid
-five = five(10, 11); // invalid
+let five = add(2, 3); // valid 5
+five = add; // valid
+five = five(10, 11); // valid
 five = function () {
   return 'Hello';
 }; // valid
@@ -88,7 +106,7 @@ function hello() {
 }
 valid
 
-hello.user = 'Sam'; // invalid
+hello.user = 'Sam'; // valid
 ```
 
 9. What is higher order function explain with an example.
