@@ -28,6 +28,24 @@ var userMessage = sayHelloToUser('Bran');
 
 ![](./img/image-name.jpg)
 
+var firstName = 'Arya';
+var lastName = 'Stark';
+
+function getFullName(first, last) {
+  return `${first} ${last}`;
+}
+
+function sayHelloToUser(name) {
+  return `Hello ${name}, How are you doing?`;
+}
+
+var fullName = getFullName(firstName, lastName);
+var jon = getFullName('John', 'Snow');
+
+console.log(fullName);
+
+var userMessage = sayHelloToUser('Bran');
+
 2.
 
 ```js
@@ -45,6 +63,15 @@ sayHi();
 
 ![](./img/image-name.jpg)
 
+function sayHi() {
+  var name = 'Lydia';
+  var age = 21;
+  console.log(name);
+  console.log(age);
+}
+
+sayHi();
+
 3.
 
 ```js
@@ -61,6 +88,14 @@ sayHi();
 <!-- Put your image below -->
 
 ![](./img/image-name.jpg)
+function sayHi() {
+  console.log(name);
+  console.log(age);
+  var name = 'Lydia';
+  var age = 21;
+}
+
+sayHi();
 
 4.
 
@@ -73,4 +108,13 @@ var arr = [1, 2, 3, 4, 5, 6];
 function double(num) {
   return num * 2;
 }
+
 ```
+console.log(arr); // output
+console.log(username); // output
+var usename = 'Sam';
+var arr = [1, 2, 3, 4, 5, 6];
+
+function double(num) {
+  return num * 2;
+}
