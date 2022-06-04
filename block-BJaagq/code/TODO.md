@@ -12,9 +12,9 @@ function change() {
   console.log(species);
 }
 
-console.log(species); // vampire
-change();
-console.log(species); // vampire
+console.log(species); // human
+// change(); vampire
+console.log(species); // human
 ```
 species = 'human'
 
@@ -43,7 +43,7 @@ function topLevelFn() {
     var anotherLocalVar = "Local to nestedFn's scope.";
 
     console.log(localVar); // This is local to topLevelFn's scope
-    console.log(topLevelVar); // This is local to topLevelFn's scope
+    console.log(topLevelVar); // This is global scope!
   }
 
   nestedFn();
@@ -71,11 +71,11 @@ function main() {
   function inner() {
     var four = 'Four';
 
-    console.log(one); // one
-    console.log(two); // two
-    console.log(three); // three
+    console.log(one); // 
+    console.log(two); // 
+    console.log(three); // 
   }
-  console.log(four); // four
+  console.log(four); // 
   inner();
 }
 
@@ -89,3 +89,5 @@ console.log(one, two, three, four); // 5
 
 - Create the execution context diagram
 - What will be the value of 1, 2, 3, 4 and 5 or error if the code does not work
+
+four is not defined
