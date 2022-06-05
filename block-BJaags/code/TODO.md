@@ -14,17 +14,22 @@ function square(num) {
 let hundred = square(10);
 console.log(hundred);
 ```
+<!-- let num = 21;
+function square(num) {
+  return num * num;
+}
+let hundred = square(10);
+console.log(hundred); -->
 
 Create the execution context diagram of the following code line by line.
 
 ```js
-var num = 21;
-function addFive(n) {
-  return n + 5;
+let num = 21;
+function square(num) {
+  return num * num;
 }
-var five = addFive(0);
-var ten = addFive(5);
-console.log(five, ten);
+let hundred = square(10);
+console.log(hundred);
 ```
 
 Create the execution context diagram of the following code line by line.
