@@ -37,7 +37,7 @@ console.log(useranme); // useranme is not defined
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // useranme is not defined
+console.log(useranme); // arya
 ```
 
 5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -47,7 +47,7 @@ let username = 'John';
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // useranme is not defined
+console.log(username); // username is already decleared
 ```
 
 6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -57,7 +57,7 @@ let username = 'John';
 if (true) {
   let username = 'Arya';
 }
-console.log(useranme); // useranme is not defined
+console.log(username); // john
 ```
 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -68,7 +68,7 @@ function sayHello() {
   let username = 'Arya';
 }
 sayHello();
-console.log(useranme); // useranme is not defined
+console.log(username); // john
 ```
 
 8. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -111,5 +111,5 @@ VM188:2 9 'First'
 }
 console.log(i, 'Second'); //
 
-VM188:4 10 'Second'
+i is not defined
 ```
