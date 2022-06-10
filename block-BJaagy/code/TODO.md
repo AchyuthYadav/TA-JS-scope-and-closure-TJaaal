@@ -1,6 +1,31 @@
 1. Create a function by your choice that accepts a callback function.
 
+// function processThis(message, callback) {
+            console.log("Running function first with message: " + message);
+  
+            if (typeof callback == "function")
+                callback();
+        }
+  
+        processThis("Hello World", function callFunction() {
+            console.log("This is a callback function.")
+        });
+
 2. Create a function by you choice that returns a function reference.
+
+//    function a() {
+          alert("A!");
+
+          function b() {
+            alert("B!");
+          }
+
+          return b();
+        }
+
+        var s = a();
+        alert("break");
+        s();
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -11,11 +36,20 @@ Have `map` return a new array filled with values that are the result of the 'cal
 ```js
 // Your code goes here
 
+  function map(arr, cb){
+  let arrFam = [];
+  for (let i = 0 ; i < arr.length ; i++){
+     arrFam[i] = cb(arr[i]);  
+  }
+  return arrFam ;
+  }
+
+
 // Test Your Code
 function multiplyByTwo(n) {
   return n * 2;
 }
-map([1, 2, 3, 4, 5], multiplyByTwo); //-> [2,4,6,8,10]
+map([1, 2, 3, 4, 5], multiplyByTwo); //-> [2,4,6,8,10] // map is not defined
 multiplyByTwo(1); //-> 2
 multiplyByTwo(2); //-> 4
 ```
