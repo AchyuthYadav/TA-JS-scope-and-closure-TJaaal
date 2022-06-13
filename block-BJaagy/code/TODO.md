@@ -37,12 +37,12 @@ Have `map` return a new array filled with values that are the result of the 'cal
 // Your code goes here
 
   function map(arr, cb){
-  let arrFam = [];
-  for (let i = 0 ; i < arr.length ; i++){
-     arrFam[i] = cb(arr[i]);  
-  }
-  return arrFam ;
-  }
+    let final = [];
+    for (let elm of arr) {
+      final.push(cb(elm));
+    }
+    return final; 
+    }
 
 
 // Test Your Code
@@ -55,9 +55,15 @@ multiplyByTwo(2); //-> 4
 ```
 
 4. Create a higher-order function called `forEach` taht takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
-
+ 
 ```js
 // Your code goes here
+    function foreach(arr, cb){
+    let final = [];
+    for (let elm of arr) {
+      (cb(elm));
+       } 
+    }
 
 // Test Your Code
 let alphabet = '';
@@ -72,6 +78,17 @@ console.log(alphabet); //prints 'abcd'
 
 ```js
 // Test Your Code
+
+
+  function filter(arr, cb){
+    let final = [];
+    for (let elm of arr) {
+    if (cb(ele)){
+      final.push(elm);
+    }
+    }
+    return final; 
+    }
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
 let even = filter(numbers, function (n) {
