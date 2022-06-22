@@ -4,7 +4,7 @@
 
 ```js
 function outer(str){
-    let sayHello = function {
+    let sayHello = function (){
       alert (str)
     }
     sayHello();
@@ -14,8 +14,9 @@ function outer(str){
 2. Write a function `delay` that accepts two arguments, a callback and the wait for the time in milliseconds (1000 ms is 1 second). `delay` should return a function that, when invoked waits for the specified amount of time before executing. (Use setTimeout)
 
 ```js
-function delay(str ,cb) {
-      return (cb)
+function delay(cb ,ms) {
+  return function(){
+      setTimeout(cb,ms)
 }
 ```
 
@@ -43,12 +44,15 @@ lastNameLee('Lynne'); //logs 'Lynne Lee'
 
 ```js
 function storyWriter() {
+  let story = "";
     return { 
-      addWords: function (str){
-      return (str);
+      addWords: function (word){
+        story += word;
+      return story;
     }
       erase: function(){
-        return ();
+        story = "";
+        return story;
       }
   }
 }
@@ -73,11 +77,11 @@ When `forEach` function is called it returns another function. When the returned
 function forEach(array) {
   var index = 0
   return function anotherFunction(){
-    return array(index + 1)
+    return array[index++]
   } 
 }
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach[1, 2, 3, 4, 5];
 next(); // 1
 next(); // 2
 next(); // 3
@@ -92,7 +96,7 @@ The returned function accepts a string `prefix` and returns `prefix` and `title`
 ```js
 function addDesignation(title) {
   return function (prefix) {
-    return ('${title} ${prefix}')
+    return ('${prefix} ${title}')
   }
 }
 
@@ -148,15 +152,19 @@ function nameFactory (firstName ,lastName){
             return ("${firstName} ${lastName}")
           }
 
-          setFirstName: function (firstName){
-            return ("${firstName}")
+          setFirstName: function (fn){
+            firstName = fn;
+            return ("${firstName} ${lastName}")
           }
 
-          setLastName: function (lastName){
-            return ("${lastName}")
+          setLastName: function (ln){
+            lastName = ln;
+            return ("${lastName} ${lastName}")
           }
 
+  }
 }
+
 
 let arya = nameFactory('Arya', 'Stark');
 arya.getFullName(); // "Arya Stark"
@@ -169,10 +177,13 @@ arya.setLastName('Lannister'); // "Jon Lannister"
 The returned function accepts a string (children) and returns the children with the tag you passed.
 
 ```js
-function createTag(ele) {
-  // your code goes here
-  return function (str){
-    return ("${str} ${ele}")
+function createTag(tag) {
+    return function(child){
+      let elm = document.createElement(tag);
+      elm.innerText = child;
+      return elm; 
+    }
+
   }
 }
 
